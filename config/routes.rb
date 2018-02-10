@@ -1,16 +1,4 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-
-  get 'sessions/create'
-
-  get 'sessions/destroy'
-
-  get 'session/new'
-
-  get 'session/create'
-
-  get 'session/destroy'
-
   root to: "toppages#index"
   
   get "login", to: "sessions#new"
@@ -19,5 +7,6 @@ Rails.application.routes.draw do
 
   get "signup", to: "users#new"
   resources :users, only: [:index, :show, :new, :create]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
+  resources :microposts, only: [:create, :destroy]
 end
