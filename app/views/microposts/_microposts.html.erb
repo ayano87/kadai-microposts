@@ -13,10 +13,9 @@
                   <p><%= micropost.content %></p>
               </div>
               <div>
+                <%= link_to "favorite", root_url, method: :get, data: { confirm: "You sure?" }, class: "btn btn-primary btn-xs" %>
                 <% if current_user == micropost.user %>
                   <%= link_to "Delate", micropost, method: :deleate, data: { confirm: "You sure?" }, class: "btn btn-danger btn-xs" %>
-                <% else %>
-                  <%= link_to "favorite", micropost, method: :get, data: { confirm: "You sure?" }, class: "btn btn-primary btn-xs" %>
                 <% end %>
               </div>
           </div>
